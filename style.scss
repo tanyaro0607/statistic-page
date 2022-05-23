@@ -26,6 +26,10 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     list-style-type: none;
+    @include breakpoint(xs) {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+    }
   }
   &-item:not(:first-child) {
     position: relative;
@@ -40,6 +44,9 @@ body {
       background-color: $gray-neitral;
       @include breakpoint(md) {
         left: -27px;
+      }
+      @include breakpoint(md) {
+        content: none;
       }
     }
   }
@@ -130,6 +137,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+  @include breakpoint(md) {
+    display: flex;
+    flex-direction: column;
+  }
   &-table {
     border-spacing: 0;
     width: 100%;
@@ -223,7 +234,7 @@ body {
       }
       &-two {
         display: grid;
-        grid-template-columns: 85% auto auto;
+        grid-template-columns: 75% auto auto;
         td:not(:first-child) {
           text-align: right;
         }
