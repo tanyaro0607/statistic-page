@@ -1,0 +1,22 @@
+$red: #ee144e;
+$yellow: #f1ae00;
+$black: #000000;
+$green: #8bc834;
+$gray-light: #e1e1e1; //фон 
+$gray-dark: #808080; //текст верх
+$gray: #a0a0a0; //текст на картинке
+$gray-neitral: #cecdc8;
+$dark: #222222;
+$pink: #ff0072;
+
+@mixin breakpoint($point){
+  @if $point == lg{
+    @media(max-width: 1140px){@content;}
+  }
+  @if $point == md{
+    @media(max-width: 960px){@content;}
+  }
+  @else if $point == xs{
+    @media(max-width: 768px){@content;}
+  }
+}
